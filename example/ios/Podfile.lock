@@ -1,0 +1,43 @@
+PODS:
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - TensorFlowLiteC (2.14.0):
+    - TensorFlowLiteC/Core (= 2.14.0)
+  - TensorFlowLiteC/Core (2.14.0)
+  - TensorFlowLiteSwift (2.14.0):
+    - TensorFlowLiteSwift/Core (= 2.14.0)
+  - TensorFlowLiteSwift/Core (2.14.0):
+    - TensorFlowLiteC (= 2.14.0)
+  - tflite_bert_qa (0.0.1):
+    - Flutter
+    - TensorFlowLiteSwift
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - tflite_bert_qa (from `.symlinks/plugins/tflite_bert_qa/ios`)
+
+SPEC REPOS:
+  trunk:
+    - TensorFlowLiteC
+    - TensorFlowLiteSwift
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  tflite_bert_qa:
+    :path: ".symlinks/plugins/tflite_bert_qa/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  TensorFlowLiteC: a836de9b6e6018665ccc349538bdd2c3b80dd7a5
+  TensorFlowLiteSwift: f706b143b69d7bf433aba7b08049bdd11c321a10
+  tflite_bert_qa: 10368242447a8805b503e74d2ebde3f924ad8d22
+
+PODFILE CHECKSUM: a41577629f53301ec9f0db5ab8a287f8c260c561
+
+COCOAPODS: 1.15.2
