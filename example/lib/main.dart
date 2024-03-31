@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -30,7 +32,9 @@ class _MyAppState extends State<MyApp> {
   Future<void> initModel() async {
     String? answer = await _tfliteBertQaPlugin.getAnswer('Apples are red', 'What color are apples?');
     if (answer != null) {
-      _answer = answer;
+      setState(() {
+        _answer = answer;
+      });
     }
   }
 

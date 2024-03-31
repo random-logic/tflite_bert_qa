@@ -32,20 +32,21 @@ public class TfliteBertQaPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
-    case "getAnswer":
-        guard let arguments = call.arguments as? [String: Any],
-              let context = arguments["contextOfTheQuestion"] as? String,
-              let question = arguments["questionToAsk"] as? String else {
-            result(FlutterError(code: "argument_error", message: "Invalid arguments", details: nil))
-            return
-        }
-        let res = answerer!.run(query: question, content: context)
-        let ans = res?.answer.text.value
-        result(ans)
-    case "getPlatformVersion":
-      result("iOS " + UIDevice.current.systemVersion)
-    default:
-      result(FlutterMethodNotImplemented)
+        case "getAnswer":
+            guard let arguments = call.arguments as? [String: Any],
+                  let context = arguments["contextOfTheQuestion"] as? String,
+                  let question = arguments["questionToAsk"] as? String else {
+                result(FlutterError(code: "invalid_arguments", message: "Invalid arguments", details: nil))
+                return
+            }
+            // TODO: no force unwrap
+            let res = answerer!.run(query: question, content: context)
+            let ans = res?.answer.text.value
+            result(ans)
+        case "getPlatformVersion":
+            result("iOS " + UIDevice.current.systemVersion)
+        default:
+            result(FlutterMethodNotImplemented)
     }
   }
 }
